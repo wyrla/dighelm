@@ -1,13 +1,14 @@
 const KeyCodes = {
-  1: [{ name: "1", value: 89 }],
-  2: [{ name: "2", value: 90 }],
-  3: [{ name: "3", value: 91 }],
-  4: [{ name: "4", value: 92 }],
-  5: [{ name: "5", value: 93 }],
-  6: [{ name: "6", value: 94 }],
-  7: [{ name: "7", value: 95 }],
-  8: [{ name: "8", value: 96 }],
-  9: [{ name: "9", value: 97 }],
+  1: [{ name: "1", value: 30 }],
+  2: [{ name: "2", value: 31 }],
+  3: [{ name: "3", value: 32 }],
+  4: [{ name: "4", value: 33 }],
+  5: [{ name: "5", value: 34 }],
+  6: [{ name: "6", value: 35 }],
+  7: [{ name: "7", value: 36 }],
+  8: [{ name: "8", value: 37 }],
+  9: [{ name: "9", value: 38 }],
+  0: [{ name: "0", value: 39 }],
   Esc: [{ name: "Esc", info: "Esc", value: 41 }],
   "-": [{ name: "-", value: 86 }],
   "=": [{ name: "=+", value: 46 }],
@@ -219,6 +220,9 @@ const KeyCodes = {
     { name: "CapsLock", info: "CapsLock", value: 57 },
     { name: "M", value: 16 },
     { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  "@": [
+    { name: "2", value: 90, special: true },
   ],
 };
 
