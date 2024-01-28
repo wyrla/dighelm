@@ -3,7 +3,7 @@ const crc32 = require("crc32");
 const fs = require("fs");
 let dbLocation = process.env.HXCORE_DB || process.argv[2];
 
-const keys = require("./keys");
+const keys = require("./keycodes");
 const serializeSequence = require("./serializeSequence");
 
 if (!dbLocation) {

@@ -1,403 +1,229 @@
-const originalMap = new Map(
-    [
-        [1, {name: "Esc", info: "Esc", value: 41}],
-        [2, {name: "1", value: 30}],
-        [
-            3,
-            {
-                name: "2",
-                value: 31,
-            },
-        ],
-        [4, {name: "3", value: 32}],
-        [5, {name: "4", value: 33}],
-        [6, {name: "5", value: 34}],
-        [
-            7,
-            {
-                name: "6",
-                value: 35,
-            },
-        ],
-        [8, {name: "7", value: 36}],
-        [9, {name: "8", value: 37}],
-        [
-            10,
-            {
-                name: "9",
-                value: 38,
-            },
-        ],
-        [11, {name: "0", value: 39}],
-        [12, {name: "-_", value: 45}],
-        [
-            13,
-            {
-                name: "=+",
-                value: 46,
-            },
-        ],
-        [14, {name: "Backspace", info: "Backspace", value: 42}],
-        [
-            15,
-            {
-                name: "Tab",
-                info: "Tab",
-                value: 43,
-            },
-        ],
-        [16, {name: "Q", value: 20}],
-        [17, {name: "W", value: 26}],
-        [
-            18,
-            {
-                name: "E",
-                value: 8,
-            },
-        ],
-        [19, {name: "R", value: 21}],
-        [20, {name: "T", value: 23}],
-        [
-            21,
-            {
-                name: "Y",
-                value: 28,
-            },
-        ],
-        [22, {name: "U", value: 24}],
-        [23, {name: "I", value: 12}],
-        [
-            24,
-            {
-                name: "O",
-                value: 18,
-            },
-        ],
-        [25, {name: "P", value: 19}],
-        [26, {name: "[{", value: 47}],
-        [
-            27,
-            {
-                name: "]}",
-                value: 48,
-            },
-        ],
-        [28, {name: "Enter", info: "Enter", value: 40}],
-        [
-            29,
-            {
-                name: "Ctrl",
-                info: "Left Ctrl",
-                value: 224,
-            },
-        ],
-        [30, {name: "A", value: 4}],
-        [31, {name: "S", value: 22}],
-        [
-            32,
-            {
-                name: "D",
-                value: 7,
-            },
-        ],
-        [33, {name: "F", value: 9}],
-        [34, {name: "G", value: 10}],
-        [
-            35,
-            {
-                name: "H",
-                value: 11,
-            },
-        ],
-        [36, {name: "J", value: 13}],
-        [37, {name: "K", value: 14}],
-        [
-            38,
-            {
-                name: "L",
-                value: 15,
-            },
-        ],
-        [39, {name: ";:", value: 51}],
-        [40, {name: '"', value: 52}],
-        [
-            41,
-            {
-                name: "`~",
-                value: 53,
-            },
-        ],
-        [42, {name: "Shift", info: "Left Shift", value: 225}],
-        [43, {name: "\\|", value: 49}],
-        [
-            44,
-            {
-                name: "Z",
-                value: 29,
-            },
-        ],
-        [45, {name: "X", value: 27}],
-        [46, {name: "C", value: 6}],
-        [
-            47,
-            {
-                name: "V",
-                value: 25,
-            },
-        ],
-        [48, {name: "B", value: 5}],
-        [49, {name: "N", value: 17}],
-        [
-            50,
-            {
-                name: "M",
-                value: 16,
-            },
-        ],
-        [51, {name: ",<", value: 54}],
-        [52, {name: ".>", value: 55}],
-        [
-            53,
-            {
-                name: "/?",
-                value: 56,
-            },
-        ],
-        [54, {name: "Shift", info: "Right Shift", value: 229}],
-        [
-            56,
-            {
-                name: "Alt",
-                info: "Left Alt",
-                value: 226,
-            },
-        ],
-        [57, {name: "Space", info: "Space", value: 44}],
-        [
-            58,
-            {
-                name: "CapsLock",
-                info: "CapsLock",
-                value: 57,
-            },
-        ],
-        [59, {name: "F1", value: 58}],
-        [60, {name: "F2", value: 59}],
-        [
-            61,
-            {
-                name: "F3",
-                value: 60,
-            },
-        ],
-        [62, {name: "F4", value: 61}],
-        [63, {name: "F5", value: 62}],
-        [
-            64,
-            {
-                name: "F6",
-                value: 63,
-            },
-        ],
-        [65, {name: "F7", value: 64}],
-        [66, {name: "F8", value: 65}],
-        [
-            67,
-            {
-                name: "F9",
-                value: 66,
-            },
-        ],
-        [68, {name: "F10", value: 67}],
-        [69, {name: "NumLock", value: 83}],
-        [
-            70,
-            {
-                name: "Scroll Lock",
-                value: 71,
-            },
-        ],
-        [71, {name: "7", value: 95}],
-        [72, {name: "8", value: 96}],
-        [
-            73,
-            {
-                name: "9",
-                value: 97,
-            },
-        ],
-        [74, {name: "-", value: 86}],
-        [75, {name: "4", value: 92}],
-        [
-            76,
-            {
-                name: "5",
-                value: 93,
-            },
-        ],
-        [77, {name: "6", value: 94}],
-        [78, {name: "+", value: 87}],
-        [
-            79,
-            {
-                name: "1",
-                value: 89,
-            },
-        ],
-        [80, {name: "2", value: 90}],
-        [81, {name: "3", value: 91}],
-        [
-            82,
-            {
-                name: "0",
-                value: 98,
-            },
-        ],
-        [83, {name: ".", value: 99}],
-        [87, {name: "F11", value: 68}],
-        [
-            88,
-            {
-                name: "F12",
-                value: 69,
-            },
-        ],
-        [91, {name: "PrintScreen", value: 70, alias: "PS"}],
-        [
-            3612,
-            {
-                name: "Enter",
-                value: 88,
-            },
-        ],
-        [3613, {name: "Ctrl", info: "Right Ctrl", value: 228}],
-        [
-            3639,
-            {
-                name: "PrintScreen",
-                value: 70,
-                alias: "PS",
-            },
-        ],
-        [3640, {name: "Alt", info: "Right Alt", value: 230}],
-        [
-            3653,
-            {
-                name: "Pause",
-                value: 72,
-            },
-        ],
-        [3655, {name: "Home", value: 74, alias: "HOME"}],
-        [
-            3657,
-            {
-                name: "PageUp",
-                value: 75,
-                alias: "PGUP",
-            },
-        ],
-        [3663, {name: "End", value: 77, alias: "END"}],
-        [
-            3665,
-            {
-                name: "PageDown",
-                value: 78,
-                alias: "PGDN",
-            },
-        ],
-        [3666, {name: "Insert", value: 73, alias: "INSERT"}],
-        [
-            3667,
-            {
-                name: "Delete",
-                value: 76,
-                alias: "DELETE",
-            },
-        ],
-        [
-            3675,
-            {
-                name: "icon.left_gui",
-                alias: "Win/Cmd",
-                icon: "win-mac",
-                value: 227,
-            },
-        ],
-        [
-            3676,
-            {name: "icon.right_gui", alias: "Win/Cmd", icon: "win-mac", value: 231},
-        ],
-        [
-            3677,
-            {
-                name: "Menu",
-                value: 101,
-            },
-        ],
-        [57416, {name: "↑", value: 82}],
-        [57419, {name: "←", value: 80}],
-        [
-            57421,
-            {
-                name: "→",
-                value: 79,
-            },
-        ],
-        [57424, {name: "↓", value: 81}],
-        [61000, {name: "↑", value: 82}],
-        [
-            61001,
-            {
-                name: "PageUp",
-                value: 75,
-                alias: "PGUP",
-            },
-        ],
-        [61003, {name: "←", value: 80}],
-        [61005, {name: "→", value: 79}],
-        [
-            61007,
-            {
-                name: "End",
-                value: 77,
-                alias: "END",
-            },
-        ],
-        [61008, {name: "↓", value: 81}],
-        [
-            61009,
-            {
-                name: "PageDown",
-                value: 78,
-                alias: "PGDN",
-            },
-        ],
-        [61010, {name: "Insert", value: 73, alias: "INSERT"}],
-        [
-            61011,
-            {
-                name: "Delete",
-                value: 76,
-                alias: "DELETE",
-            },
-        ],
-        [60999, {name: "Home", value: 74, alias: "HOME"}],
-    ]);
+const KeyCodes = {
+  1: [{ name: "1", value: 30 }],
+  2: [{ name: "2", value: 31 }],
+  3: [{ name: "3", value: 32 }],
+  4: [{ name: "4", value: 33 }],
+  5: [{ name: "5", value: 34 }],
+  6: [{ name: "6", value: 35 }],
+  7: [{ name: "7", value: 36 }],
+  8: [{ name: "8", value: 37 }],
+  9: [{ name: "9", value: 38 }],
+  0: [{ name: "0", value: 39 }],
+  Esc: [{ name: "Esc", info: "Esc", value: 41 }],
+  "-": [{ name: "-", value: 86 }],
+  "=": [{ name: "=+", value: 46 }],
+  Backspace: [{ name: "Backspace", info: "Backspace", value: 42 }],
+  Tab: [{ name: "Tab", info: "Tab", value: 43 }],
+  q: [{ name: "Q", value: 20 }],
+  w: [{ name: "W", value: 26 }],
+  e: [{ name: "E", value: 8 }],
+  r: [{ name: "R", value: 21 }],
+  t: [{ name: "T", value: 23 }],
+  y: [{ name: "Y", value: 28 }],
+  u: [{ name: "U", value: 24 }],
+  i: [{ name: "I", value: 12 }],
+  o: [{ name: "O", value: 18 }],
+  p: [{ name: "P", value: 19 }],
+  ps: [{ name: "PrintScreen", value: 70, alias: "PS" }],
+  "[": [{ name: "[[{", value: 47 }],
+  "]": [{ name: "]}", value: 48 }],
+  Enter: [{ name: "Enter", value: 88 }],
+  Ctrl: [{ name: "Ctrl", info: "Right Ctrl", value: 228 }],
+  a: [{ name: "A", value: 4 }],
+  s: [{ name: "S", value: 22 }],
+  d: [{ name: "D", value: 7 }],
+  f: [{ name: "F", value: 9 }],
+  g: [{ name: "G", value: 10 }],
+  h: [{ name: "H", value: 11 }],
+  j: [{ name: "J", value: 13 }],
+  k: [{ name: "K", value: 14 }],
+  l: [{ name: "L", value: 15 }],
+  ";": [{ name: ";:", value: 51 }],
+  '"': [{ name: '"', value: 52 }],
+  "`": [{ name: "`~", value: 53 }],
+  Shift: [{ name: "Shift", info: "Right Shift", value: 229 }],
+  "\\": [{ name: "\\|", value: 49 }],
+  z: [{ name: "Z", value: 29 }],
+  x: [{ name: "X", value: 27 }],
+  c: [{ name: "C", value: 6 }],
+  v: [{ name: "V", value: 25 }],
+  b: [{ name: "B", value: 5 }],
+  n: [{ name: "N", value: 17 }],
+  m: [{ name: "M", value: 16 }],
+  ",": [{ name: ",<", value: 54 }],
+  ".": [{ name: ".", value: 99 }],
+  "/": [{ name: "/?", value: 56 }],
+  Alt: [{ name: "Alt", info: "Right Alt", value: 230 }],
+  " ": [{ name: "Space", info: "Space", value: 44 }],
+  CapsLock: [{ name: "CapsLock", info: "CapsLock", value: 57 }],
+  F1: [{ name: "F1", value: 58 }],
+  F2: [{ name: "F2", value: 59 }],
+  F3: [{ name: "F3", value: 60 }],
+  F4: [{ name: "F4", value: 61 }],
+  F5: [{ name: "F5", value: 62 }],
+  F6: [{ name: "F6", value: 63 }],
+  F7: [{ name: "F7", value: 64 }],
+  F8: [{ name: "F8", value: 65 }],
+  F9: [{ name: "F9", value: 66 }],
+  F10: [{ name: "F10", value: 67 }],
+  NumLock: [{ name: "NumLock", value: 83 }],
+  "Scroll Lock": [{ name: "Scroll Lock", value: 71 }],
+  "+": [{ name: "+", value: 87 }],
+  F11: [{ name: "F11", value: 68 }],
+  F12: [{ name: "F12", value: 69 }],
+  Pause: [{ name: "Pause", value: 72 }],
+  HOME: [{ name: "Home", value: 74, alias: "HOME" }],
+  PGUP: [{ name: "PageUp", value: 75, alias: "PGUP" }],
+  END: [{ name: "End", value: 77, alias: "END" }],
+  PGDN: [{ name: "PageDown", value: 78, alias: "PGDN" }],
+  INSERT: [{ name: "Insert", value: 73, alias: "INSERT" }],
+  DELETE: [{ name: "Delete", value: 76, alias: "DELETE" }],
+  "Win/Cmd": [
+    {
+      name: "icon.right_gui",
+      alias: "Win/Cmd",
+      icon: "win-mac",
+      value: 231,
+    },
+  ],
+  Menu: [{ name: "Menu", value: 101 }],
+  "↑": [{ name: "↑", value: 82 }],
+  "←": [{ name: "←", value: 80 }],
+  "→": [{ name: "→", value: 79 }],
+  "↓": [{ name: "↓", value: 81 }],
+  A: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "A", value: 4 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  S: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "S", value: 22 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  D: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "D", value: 7 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  F: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "F", value: 9 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  G: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "G", value: 10 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  H: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "H", value: 11 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  J: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "J", value: 13 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  K: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "K", value: 14 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  L: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "L", value: 15 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  Q: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "Q", value: 20 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  W: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "W", value: 26 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  E: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "E", value: 8 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  R: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "R", value: 21 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  T: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "T", value: 23 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  Y: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "Y", value: 28 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  U: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "U", value: 24 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  I: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "I", value: 12 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  O: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "O", value: 18 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  P: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "P", value: 19 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  Z: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "Z", value: 29 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  X: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "X", value: 27 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  C: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "C", value: 6 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  V: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "V", value: 25 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  B: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "B", value: 5 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  N: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "N", value: 17 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  M: [
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+    { name: "M", value: 16 },
+    { name: "CapsLock", info: "CapsLock", value: 57 },
+  ],
+  "@": [
+    { name: "2", value: 90, special: true },
+  ],
+};
 
-const keycodes = {};
-
-for (const entry of originalMap.entries()) {
-    const key = entry[0];
-    const value = entry[1];
-
-    let newKey = value.alias || value.name;
-
-    if (newKey.length === 2 && !/^F/i.test(newKey)) {
-        newKey = newKey[0];
-    }
-
-    keycodes[newKey] = value;
-}
-
-module.exports = keycodes;
-
+module.exports = KeyCodes;
