@@ -22,7 +22,7 @@ For now, only fully lowercase strings without spaces are supported (symbols may 
 Locate the path of your users' ObinsKit sqlite database. In Arch Linux it is `$HOME/.config/ObinsKit/Run.core`.
 In other platforms the file name will be the same but the location will be different.
 
-Cd into the repo dir and run `node index.js <dbPath> <stringsPath>`. 
+Cd into the repo dir and run `node index.js <dbPath> <stringsPath>` or `node index.js <dbPath> "string to macro"`. 
 
 Each string will generate a macro, which you will then be able to see in the app itself.
 
