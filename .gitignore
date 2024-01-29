@@ -143,3 +143,4 @@ tags
 
 .idea/
 node_modules/
+.env
